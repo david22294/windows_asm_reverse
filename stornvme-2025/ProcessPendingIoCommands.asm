@@ -1,7 +1,11 @@
 // rcx: DeviceExtension (HBA)
-// rdx(structure)
-//      rdx+0: IoSubmissionQueue VA
-//      rdx+8: IoSubmissionQueue PA
+// rdx: SubIoQ information(structure)
+//      +0x0    IoSubmissionQueue VA
+//      +0x8    IoSubmissionQueue PA   
+//      +0x34   Doorbell(?)
+//      +0x3a   QueueID(?) (2 bytes)
+// r8:  r8 is the value in r9 
+// r9:  some structure addr
 stornvme!ProcessPendingIoCommands:
 fffff802`5724dc50 4055            push    rbp
 fffff802`5724dc52 53              push    rbx
